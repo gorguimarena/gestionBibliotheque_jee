@@ -1,6 +1,8 @@
 package sn.edu.diamniadio.gestion_bibliotheque;
 
-import com.sun.net.httpserver.Request;
+
+import jakarta.ejb.Local;
+import jakarta.ejb.LocalBean;
 import jakarta.ejb.Stateless;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
@@ -11,6 +13,8 @@ import jakarta.persistence.Persistence;
 import java.util.List;
 
 @Stateless
+@LocalBean
+@Local(LivreService.class)
 public class LivreServiceImpl implements LivreService {
     EntityManagerFactory entityManagerFactory= Persistence.createEntityManagerFactory("bibliotheque");
     EntityManager entityManager = entityManagerFactory.createEntityManager();

@@ -13,7 +13,7 @@ import jakarta.servlet.http.*;
 public class LivreServlet extends HttpServlet {
 
     @EJB
-    LivreServiceImpl livreService = new LivreServiceImpl();
+    LivreServiceImpl livreService;
     List<Livre> livreList;
     RequestDispatcher rd;
 
